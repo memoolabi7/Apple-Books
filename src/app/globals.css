@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+
+
+@keyframes swipeRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes swipeLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-swipe-right {
+  animation: swipeRight 20s linear infinite;
+}
+
+.animate-swipe-left {
+  animation: swipeLeft 20s linear infinite;
+}
+
+.animate-swipe-right:hover, .animate-swipe-left:hover {
+  animation-play-state: paused;
+}
